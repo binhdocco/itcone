@@ -30,9 +30,7 @@ Building a website with Drupal10 including:
 
 - Git clone from https://github.com/binhdocco/itcone.git
 - Go to folder: itcdrupal
-- Open command line at the current directory, run:
-    composer remove drush/drush
-
+- Open command line at the current directory, run: <code>composer remove drush/drush</code>
 - Copy&Rename the file /.dev/settings.php.sample TO /web/sites/default/settings.php
 
 ## If you HAVE Lando installed, from /itcdrupal, run:
