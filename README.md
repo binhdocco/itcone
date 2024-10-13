@@ -49,5 +49,5 @@ Building a website with Drupal10 including:
 - If using Lando: http://itcone.local.lndo.site/ 
     
 # Admin user: 
-- Username: admin@test.com
+- Username: admin
 - Password: theAdmin123@
