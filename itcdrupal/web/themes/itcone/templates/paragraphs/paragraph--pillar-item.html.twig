@@ -1,0 +1,8 @@
+{% block content %}
+    {% include '@itcone/components/pillar_item.twig' with {
+        "component" : {
+            "animation": paragraph.field_animation.value,
+            "description": paragraph.field_description.value
+        }
+    } only %}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% block content %}
+    {% embed '@itcone/components/carousel.twig' with {
+        content: content,
+        "component" : {
+            "title": content.field_title|field_value
+        }
+    } only %}
+        {% block items %}
+            {% if (content.field_carousel_items['#items']|length > 0) %}
+                {% for i in content.field_carousel_items['#items'] %}
+                    {{ content.field_carousel_items[loop.index0] }}
+                {% endfor %}
+            {% endif %}
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

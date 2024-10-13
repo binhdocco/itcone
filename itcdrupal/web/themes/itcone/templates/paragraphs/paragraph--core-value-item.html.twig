@@ -1,0 +1,9 @@
+{% block content %}
+    {% include '@itcone/components/corevalue_item.twig' with {
+        "component" : {
+            "title": paragraph.field_title.value,
+            "description": paragraph.field_description.value,
+            "imagePath": paragraph.field_featured_image.entity | file_url
+        }
+    } only %}
+{% endblock %}

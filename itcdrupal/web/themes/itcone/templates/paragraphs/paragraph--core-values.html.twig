@@ -1,0 +1,19 @@
+{% block content %}
+    {% embed '@itcone/components/corevalues.twig' with {
+        content: content,
+        "component" : {
+            "title": content.field_title|field_value,
+            "description": content.field_description|field_raw('value')
+        }
+    } only %}
+        {% block items %}
+            {% if (content.field_core_values['#items']|length > 0) %}
+                <div class="about-us_core-values__values__yR84U">
+                    {% for i in content.field_core_values['#items'] %}
+                        {{ content.field_core_values[loop.index0] }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

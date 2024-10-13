@@ -1,0 +1,23 @@
+{% block content %}
+    {% embed '@itcone/components/pillars.twig' with {
+        content: content,
+        "component" : {
+            "title": content.field_title|field_value,
+            "description": content.field_description|field_raw('value'),
+            "cta": {
+                "label": content.field_cta[0]['#title'],
+                "href": content.field_cta[0]['#url_title']
+            }
+        }
+    } only %}
+        {% block items %}
+            {% if (content.field_pillars['#items']|length > 0) %}
+                <div class="about-us_pillars__list__U6O_U">
+                    {% for i in content.field_pillars['#items'] %}
+                        {{ content.field_pillars[loop.index0] }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

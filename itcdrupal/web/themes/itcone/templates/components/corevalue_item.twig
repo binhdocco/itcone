@@ -1,0 +1,17 @@
+{% if (component.title or component.description) %}
+    <div class="about-us_core-value__IfXkD">
+        <div class="about-us_core-value__logo__iE6hl">
+            <span style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%">
+
+                {% if (component.imagePath) %}
+                <img alt="{{component.title}}" title="{{component.title}}" 
+                src="{{component.imagePath}}" decoding="async" data-nimg="intrinsic" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"/>
+                {% endif %}
+            </span>
+        </div>
+        <div>
+            <h3 class="about-us_core-value__title__WLBoM">{{component.title}}</h3>
+            <p>{{ component.description|raw }}</p>
+        </div>
+    </div>
+{% endif %}

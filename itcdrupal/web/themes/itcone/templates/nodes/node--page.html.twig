@@ -1,0 +1,3 @@
+{% for component in node.field_page_content %}
+  {{ drupal_entity('paragraph', component.target_id) }}
+{% endfor %}

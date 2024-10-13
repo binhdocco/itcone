@@ -1,0 +1,19 @@
+# These lines define the nf/global library.
+global:
+  css:
+    # The SMACSS category, "base", is loaded before other categories. Drupal 8/9
+    # loads stylesheets based on the SMACSS ordering of:
+    # base, layout, component, state, theme
+    theme:
+      assets/css/a8f502d929b95db5.css: { media: screen }
+      assets/css/cb5bfe38aa154455.css: { media: screen }
+  #js:
+  #  assets/js/webpack-615a0237bfb6afa2.js: {}
+  #  assets/js/framework-114634acb84f8baa.js: {}
+  #  assets/js/main-20c1e5096c700d34.js: {}
+  #  assets/js/_app-b4ed7addbcc87e84.js: {}
+
+#aboutus:
+  #js:
+  #  assets/js/938-17bc27a4be44c138.js: {}
+  #  assets/js/about-us-fa0ab5fe4d79a693.js: {}

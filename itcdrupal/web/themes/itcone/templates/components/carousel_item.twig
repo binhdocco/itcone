@@ -1,0 +1,31 @@
+<div class="executive-slidings__item">
+    <div class="executive-slidings__photo">
+      <span style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:absolute;top:0;left:0;bottom:0;right:0">
+        <img alt="{{component.title}}" title="{{component.title}}" sizes="100vw" src="{{component.imagePath}}" decoding="async" data-nimg="fill" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;" />
+      </span>
+    </div>
+    <div class="executive-slidings__text">
+      <p class="executive-slidings__name">{{component.title}}</p>
+      <p class="executive-slidings__position">{{component.jobPosition}}</p>
+      <div class="profile_bo_data">
+        <p>
+          <span class="TextRun SCXW80693751 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto">
+            <span class="NormalTextRun SCXW80693751 BCX0">
+                {{component.description|raw}}
+            </span>
+          </span>
+        </p>
+        {% if (component.characteristics) %}
+            {% if component.characteristics is iterable %}
+                {% for character in component.characteristics %}
+                    {% if (character) %}
+                        <h1>{{ character|upper }}</h1>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                <h1>{{ component.characteristics|upper }}</h1>
+            {% endif %}
+        {% endif %}
+      </div>
+    </div>
+</div>

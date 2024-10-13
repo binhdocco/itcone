@@ -1,0 +1,9 @@
+{% block content %}
+    {% include '@itcone/components/text.twig' with {
+        "component" : {
+            "title": paragraph.field_title.value,
+            "description": paragraph.field_description.value,
+            "backgroundColor": paragraph.field_background_color.value
+        }
+    } only %}
+{% endblock %}

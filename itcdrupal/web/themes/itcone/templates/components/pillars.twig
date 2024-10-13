@@ -1,0 +1,25 @@
+{% set section_cls = 'about-us_pillars__LIKj6' %}
+{% set div_cls = 'about-us_pillars__description__rcWRh' %}
+
+<section class="{{section_cls}}">
+    {% if (component.title) %}
+        <h1>    
+            {{ component.title }}
+        </h1>
+    {% endif %}
+    {% if (component.description) %}
+        <div class="{{ div_cls }}">
+            {{ component.description|raw }}
+        </div>
+    {% endif %}
+    {% block items %}
+            
+    {% endblock %}
+    {% if (component.cta and component.cta.label) %}
+        <div class="about-us_pillars__cta__mjrjd">
+            <a class="buttons_darkButton__MBfed" href="{{ component.cta.href|default('#') }}">
+                {{ component.cta.label }}
+            </a>
+        </div>    
+    {% endif %}
+</section>

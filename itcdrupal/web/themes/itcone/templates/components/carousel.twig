@@ -1,0 +1,14 @@
+{% set section_cls = 'about-us_profile__28fM4' %}
+
+<section class="{{section_cls}}">
+    {% if (component.title) %}
+        <h1 class="about-us_profile__headtitle__cG0hw">
+            {{ component.title }}
+        </h1>
+    {% endif %}
+    <div class="slidings executive-slidings">
+        {% block items %}
+            
+        {% endblock %}
+    </div>
+</section>

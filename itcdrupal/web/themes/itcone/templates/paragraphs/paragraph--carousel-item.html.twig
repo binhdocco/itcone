@@ -1,0 +1,11 @@
+{% block content %}
+    {% include '@itcone/components/carousel_item.twig' with {
+        "component" : {
+            "title": paragraph.field_title.value,
+            "description": paragraph.field_description.value,
+            "jobPosition": paragraph.field_job_position.value,
+            "imagePath": paragraph.field_featured_image.entity | file_url,
+            "characteristics": content.field_characteristic|field_raw('value')
+        }
+    } only %}
+{% endblock %}

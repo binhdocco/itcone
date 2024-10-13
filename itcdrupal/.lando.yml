@@ -1,0 +1,43 @@
+name: itcone.local
+recipe: drupal10
+proxy:
+  appserver:
+    - itcone.local.lndo.site
+  phpmyadmin:
+    - pma.itcone.local.lndo.site
+config:
+  webroot: web
+  via: apache
+  database: mysql
+  composer_version: 2
+  php: 8.1
+services:
+  database:
+    type: mysql
+  phpmyadmin:
+    type: phpmyadmin
+    hosts:
+      - database
+    overrides:
+      environment:
+        PMA_USER: drupal10
+        PMA_PASSWORD: drupal10
+tooling:
+  drush:
+    cmd:
+      - /app/vendor/drush/drush/drush
+  theme-export:
+    service: database
+    description: Export database and compress the uploads folder
+    cmd:
+      - mkdir -p /app/.dev
+      - /helpers/sql-export.sh /app/.dev/theme_database.sql
+      - cd /app/.dev && tar -czf theme_files.tgz /app/web/sites/default/files/
+  theme-import:
+    service: database
+    description: Import database and extract the theme_files folder
+    cmd:
+      - /helpers/sql-import.sh /app/.dev/theme_database.sql.gz
+      - cd /app/.dev && tar -xzf theme_files.tgz
+      - cd /app/.dev/app/web/sites/default/files/ && cp ./ /app/web/sites/default/files/ -r
+      - cd /app/.dev && rm -rf app

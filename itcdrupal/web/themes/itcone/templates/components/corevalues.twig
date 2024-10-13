@@ -1,0 +1,18 @@
+{% set section_cls = 'about-us_core-values__Ea5gD' %}
+{% set div_cls = 'text-center whitespace-pre-line' %}
+
+<section class="{{section_cls}}">
+    {% if (component.title) %}
+        <h1 class="about-us_core-values__headtitle__ykTt6">    
+            {{ component.title }}
+        </h1>
+    {% endif %}
+    {% if (component.description) %}
+        <div class="{{ div_cls }}">
+            {{ component.description|raw }}
+        </div>
+    {% endif %}
+    {% block items %}
+            
+    {% endblock %}
+</section>

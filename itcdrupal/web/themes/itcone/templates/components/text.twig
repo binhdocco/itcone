@@ -1,0 +1,23 @@
+{% set section_cls = 'about-us_head__xtmIM' %}
+{% set div_cls = 'about-us_head__description__NpgaN' %}
+{% if (component.backgroundColor == 'red') %}
+    {% set section_cls = 'about-us_intro__LucKo' %}
+    {% set div_cls = 'about-us_intro__subtitle__GXha4 d-' %}
+{% endif %}
+
+<section class="{{section_cls}}">
+    {% if (component.title) %}
+        {% if (component.backgroundColor == 'red') %}
+            <h1 class="text-white" style="padding-bottom: 30px">
+        {% else %}
+            <h1>
+        {% endif %}    
+            {{ component.title }}
+        </h1>
+    {% endif %}
+    {% if (component.description) %}
+        <div class="{{ div_cls }}">
+            {{ component.description|raw }}
+        </div>
+    {% endif %}    
+</section>

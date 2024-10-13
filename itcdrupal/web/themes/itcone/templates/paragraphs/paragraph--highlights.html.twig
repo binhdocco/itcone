@@ -1,0 +1,13 @@
+{% block content %}
+    {% embed '@itcone/components/highlights.twig' with {
+        content: content
+    } only %}
+        {% block items %}
+            {% if (content.field_highlights['#items']|length > 0) %}
+                {% for i in content.field_highlights['#items'] %}
+                    {{ content.field_highlights[loop.index0] }}
+                {% endfor %}
+            {% endif %}
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

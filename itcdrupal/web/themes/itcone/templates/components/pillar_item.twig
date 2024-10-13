@@ -1,0 +1,16 @@
+{% if (component.animation or component.description) %}
+    <div class="about-us_pillar__JEM_t">
+        <div class="about-us_pillar__logo__hezQM">
+            {% if (component.animation) %}
+                <div>
+                    <div>
+                        {{ component.animation|raw }}
+                    </div>
+                </div>
+            {% endif %}
+            {% if (component.description) %}
+                <h3> {{ component.description|raw }}</h3>
+            {% endif %}
+        </div>
+    </div>
+{% endif %}
