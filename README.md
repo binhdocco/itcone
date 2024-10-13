@@ -3,6 +3,9 @@
 ## ABOUT THE PROJECT
 
 Building a website with Drupal10 including:
+
+- Containerization tool
+    - Docker and Lando plugin
 - Component-driven architecture:
     + Each section will be a component containing list of fields for inputting data (text & image)
     + Components can be re-ordered on a edition page
@@ -25,4 +28,26 @@ Building a website with Drupal10 including:
 
 ## HOW TO INSTALL
 
-Admin user: admin@test.com/theAdmin123@
+- Git clone from https://github.com/binhdocco/itcone.git
+- Go to folder: itcdrupal
+- Open command line at the current directory, run:
+    composer remove drush/drush
+- Copy&Rename the file /.dev/settings.php.sample TO /web/sites/default/settings.php
+
+# If you HAVE Lando installed, from /itcdrupal, run:
+    lando start
+    lando composer require drush/drush
+    lando theme-import
+    lando drush cr
+
+# If you DONOT have Lando installed 
+- create a database in your machine, and update the database info in /web/sites/default/settings.php
+- import sample sql from /.dev/theme_database.sql.gz into your database
+- extract /.dev/theme_files.tgz to /web/sites/default/files
+
+# Open the website's url
+- If using Lando: http://itcone.local.lndo.site/ 
+    
+# Admin user: 
+- Username: admin@test.com
+- Password: theAdmin123@
