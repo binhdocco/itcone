@@ -67,4 +67,3 @@ composer.lock
 .vscode/settings.json
 /itcdrupal/web/sites/default/settings.php
 /itcdrupal/web/modules/contrib/
-/itcdrupal/.dev
